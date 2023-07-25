@@ -14,9 +14,9 @@ to generate 50 random gender french names (as it is by default on FR)
 Try also : 
 
 ```python
-from generator import generate_random_names, Country, Gender
+from generator import generate_random_names, NameSet, Gender
 
-generate_random_names(Gender.FEMALE,Country.US,k = 10)
+generate_random_names(Gender.FEMALE,NameSet.UNITED_STATES,k = 10)
 ```
 
 to generate 10 US female names.

@@ -3,10 +3,44 @@ import aiohttp
 import asyncio
 from enum import Enum
 
-class Country(Enum):
-    FR = "fr"
-    EN = "en"
-    US = "us"
+class NameSet(Enum):
+    FRENCH = "fr"
+    ENGLISH = "en"
+    UNITED_STATES = "us"
+    ARABIC = "ar"
+    AUSTRALIA = "au"
+    BRAZIL = "br"
+    CHECHEN = "celat"
+    CHINA = "ch"
+    CHINA_TRADITIONAL = "zhtw"
+    CROATIA = "hr"
+    CZECH_REPUBLIC = "cs"
+    DENMARK = "dk"
+    NETHERLANDS = "nl"
+    ERITREA = "er"
+    FINLAND = "fi"
+    GERMANY = "gr"
+    GREENLAND = "gl"
+    SPAIN = "sp"
+    HOBBIT = "hobbit"
+    HUNGARY = "hu"
+    ICELAND = "is"
+    IGBO = "ig"
+    ITALIAN = "it"
+    JAPAN = "jpja"
+    JAPAN_ANGLICIZED = "jp"
+    KLINGON = "tlh"
+    NINJA = "ninja"
+    NORWAY = "no"
+    PERSIAN = "fa"
+    POLAND = "pl"
+    RUSSIA = "ru"
+    RUSSIA_CYRILLIC = "rucyr"
+    SCOTLAND = "gd"
+    SLOVENIA = "sl"
+    SWEDEN = "sw"
+    THAILAND = "th"
+    VIETNAM = "vn"
 
 class Gender(Enum):
     RANDOM = "random"
@@ -17,9 +51,9 @@ async def __fetch_data(url, session):
     async with session.get(url) as response:
         return await response.text()
 
-async def async_get_random_names(gender : Gender = Gender.RANDOM,country : Country = Country.FR,k : int = 1):
+async def async_get_random_names(gender : Gender = Gender.RANDOM,nameset : NameSet = NameSet.FRENCH,k : int = 1):
     urls = [
-        f"https://www.fakenamegenerator.com/gen-{gender.value}-{country.value}-{country.value}.php"
+        f"https://www.fakenamegenerator.com/gen-{gender.value}-{nameset.value}-fr.php"
         for _ in range(k) 
     ]
 
@@ -35,8 +69,8 @@ async def async_get_random_names(gender : Gender = Gender.RANDOM,country : Count
         soup = BeautifulSoup(response_text, "html.parser")
         print(soup.find("div", {"class": "address"}).find("h3").text)
 
-def generate_random_names(gender : Gender = Gender.RANDOM,country : Country = Country.FR,k : int = 1):
-    asyncio.run(async_get_random_names(gender,country,k))
+def generate_random_names(gender : Gender = Gender.RANDOM,nameset : NameSet = NameSet.FRENCH,k : int = 1):
+    asyncio.run(async_get_random_names(gender,nameset,k))
 
 generate_random_names(k = 50)
 
