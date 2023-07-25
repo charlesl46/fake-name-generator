@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fake-name-generator"
+version = "0.0.1"
+authors = [
+{name="L.E.Charles", email="charles.lucas4665@gmail.com" }
+]
+description = "A python parser to retrieve fake names from https://www.fakenamegenerator.com/"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/charlesl46/fake-name-generator"

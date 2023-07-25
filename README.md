@@ -3,6 +3,10 @@ A python parser to retrieve fake names from https://www.fakenamegenerator.com/
 
 ## Usage
 
+```bash
+pip install fake-name-generator
+``````
+
 ```python
 from generator import generate_random_names
 

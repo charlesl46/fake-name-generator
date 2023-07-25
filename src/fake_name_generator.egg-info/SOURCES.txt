@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/fake_name_generator/__init__.py
+src/fake_name_generator/generator.py
+src/fake_name_generator.egg-info/PKG-INFO
+src/fake_name_generator.egg-info/SOURCES.txt
+src/fake_name_generator.egg-info/dependency_links.txt
+src/fake_name_generator.egg-info/top_level.txt
